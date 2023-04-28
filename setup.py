@@ -3,7 +3,7 @@ from typing import List
 
 # declaring variables for setup function
 project_Name = 'housing_predictor'
-Version = '0.0.4'
+Version = '0.0.8'
 Author = 'kiran'
 Description = 'Machine learning project'
 Requirements_file_name = 'requirements.txt'
@@ -17,8 +17,8 @@ def get_requirements_list()->List[str]:
     return function gives a list which contains name of libraries mentioned in requirement.txt
     """
 
-    with open(Requirements_file_name) as require_file:
-        return require_file.readlines().remove('-e .')
+    with open(Requirements_file_name, errors='ignore') as require_file:
+        return require_file.readlines()
 
 setup(
     name = project_Name,
